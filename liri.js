@@ -22,17 +22,18 @@ var start = function () {
         pick = user.pick;
         switch (pick) {
             case "my-tweets":
-                console.log("test");
-                inquirer.prompt([
-                    {
-                        type   : "input",
-                        message: "What do you want to search for?",
-                        name   : "query"
-                    }
-                ]).then(function (user) {
-                    title = user.query;
-                    twitterCall(user.query);
-                });
+                // inquirer.prompt([
+                //     {
+                //         type   : "input",
+                //         message: "What do you want to search for?",
+                //         name   : "query"
+                //     }
+                // ]).then(function (user) {
+                //     title = user.query;
+                //     twitterCall(user.query);
+                // });
+                console.log("Latest tweets: ");
+                twitterCall();
                 break;
 
             case "spotify-this-song":
@@ -76,10 +77,10 @@ var start = function () {
         }
     });
 };
-function twitterCall(tweet) {
+function twitterCall() {
     addToLog();
-    var twitterClient = new Twitter(keys.twitter);
-    twitterClient.get("statuses/user_timeline", {count: 20}, function (error, tweets, response) {
+    var twitter = new Twitter(keys.twitter);
+    twitter.get("statuses/user_timeline", {count: 20}, function (error, tweets, response) {
         if (error) {
             console.log("There was an error.");
         } else {
