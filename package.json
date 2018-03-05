@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/jparedeso/liri-node-app/issues"
   },
-  "homepage": "https://github.com/jparedeso/liri-node-app#readme"
+  "homepage": "https://github.com/jparedeso/liri-node-app#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "inquirer": "^5.1.0",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.83.0",
+    "twitter": "^1.7.1"
+  }
 }
